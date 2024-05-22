@@ -1,35 +1,24 @@
-#создание класса воин
-class Warrior():
-    #создание характеристик воина
-    def __init__(self, name, power, endurance, hair_color):
-        self.name = name#имя
-        self.power = power#сила
-        self.endurance = endurance#выносливость
-        self.hair_color = hair_color#цвет волос
+# Задача: Создай класс Task, который позволяет управлять задачами (делами). У задачи должны быть атрибуты: описание задачи,
+# срок выполнения и статус (выполнено/не выполнено). Реализуй функцию для добавления задач,
+# отметки выполненных задач и вывода списка текущих (не выполненных) задач.
+class Task:
+    def (self, description, deadline, status):
+        self.description = description
+        self.deadline = deadline
+        self.status = status
 
-    #создание метода воина
-    def sleep(self):
-        print(f'{self.name} лег спать и выносливость увеличилась на 2')
-        self.endurance += 2
+    def add_task(self):
+        print(f"Новая задача: {self.description}, срок выполнения: {self.deadline}, статус: {self.status}")
 
-    #создание метода воина
-    def eat(self):
-        print(f'{self.name} сел покушать и сила увеличилась на 1')
-        self.power += 1
+    def mark_as_done(self):
+        self.status = "выполнено"
+        print(f"Задача: {self.description}, срок выполнения: {self.deadline}, статус: {self.status}")
 
-    #создание метода воина
-    def hit(self):
-        print(f'{self.name} ударил противника')
-        self.endurance -= 6
+    def show_uncompleted_tasks(self):
+        if self.status == "не выполнено":
+            print(f"Задача: {self.description}, срок выполнения: {self.deadline}, статус: {self.status}")
 
-    #создание метода воина
-    def walk(self):
-        print((f"{self.name} гуляет "))
-
-    def info(self):
-        print(f'имя война: {self.name}')
-        print(f'сила: {self.power}')
-        print(f'выносливость: {self.endurance}')
-        print(f'цвет волос: {self.hair_color}')
-
-
+my_business = Task("Закончить работу", "до 22.05.2024", "не выполнено")
+my_business.add_task()
+my_business.mark_as_done()
+my_business.show_uncompleted_tasks()
